@@ -17,11 +17,11 @@ request.interceptors.request.use(config => {
 })
 
 request.interceptors.response.use(res => {
-  if(res.data.code == 401){
+  if(res.data.code === 401){
     Toast.fail(res.data.message)
     // router.push('/login')
   }
-  if(res.data.code == 200){
+  if(res.data.code === 200){
     return res.data
   }else{
     Toast.fail(res.data.message)

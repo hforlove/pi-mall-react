@@ -46,7 +46,7 @@ export default function Home({history}) {
         {
           homeData.swiperList.map(item=>(
             <div className="home-swiper" key={item.id}>
-              <img src={item.cover} onLoad={() => {window.dispatchEvent(new Event('resize'));}} />
+              <img src={item.cover} alt="" onLoad={() => {window.dispatchEvent(new Event('resize'));}} />
             </div>
           ))
         }
@@ -57,7 +57,7 @@ export default function Home({history}) {
           homeData.navList.map(item=>(
             <li key={item.id} onClick={()=>history.push(`/goodsList?cate=${item.id}`)}>
               <div>
-                <img src={item.cover} />
+                <img src={item.cover}  alt="" />
                 {item.title}
               </div>
             </li>
@@ -65,7 +65,7 @@ export default function Home({history}) {
         }
       </ul>
       
-      <div class="home-goods">
+      <div className="home-goods">
         <h3>新品</h3>
         <ul>
           {
@@ -78,7 +78,7 @@ export default function Home({history}) {
         </ul>
       </div>
       
-      <div class="home-goods">
+      <div className="home-goods">
         <h3>热门</h3>
         <ul>
           {
@@ -91,7 +91,7 @@ export default function Home({history}) {
         </ul>
       </div>
       
-      <div class="home-goods">
+      <div className="home-goods">
         <h3>推荐</h3>
         <ul>
           {

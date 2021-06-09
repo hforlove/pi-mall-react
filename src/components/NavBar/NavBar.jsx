@@ -32,7 +32,9 @@ function NavBar(props) {
       </div>
       <div className="right">
         <div onClick={onRightClick}>
-          <i className={`iconfont ${props.right}`}></i>
+          {
+            props.rightText ? props.rightText : <i className={`iconfont ${props.right}`}></i>
+          }
         </div>
       </div>
     </div>
@@ -42,10 +44,12 @@ function NavBar(props) {
 
 NavBar.propTypes = {
   back: PropTypes.bool,
-  right: PropTypes.string
+  right: PropTypes.string,
+  rightText: PropTypes.string
 }
 NavBar.defaultProps = {
   back: true,
-  right: 'iconsousuo'
+  right: 'iconsousuo',
+  rightText: ''
 }
 export default withRouter(NavBar)

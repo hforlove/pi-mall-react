@@ -1,0 +1,56 @@
+.category{
+  display: flex;
+  height: calc(100vh - 96px);
+  .cate-left{
+    height: 100%;
+    width: 86px;
+    overflow: hidden;
+  }
+  .cate-right{
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+  }
+  .cate-list{
+    li{
+      height: 42px;
+      line-height: 42px;
+      font-size: 14px;
+      text-align: center;
+      &.act{
+        color: #FB0017;
+      }
+    }
+  }
+  .cate-child{
+    padding-bottom: 20px;
+    .cell{
+      padding: 14px;
+    }
+    .tags{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -10px;
+      .title{
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 10px;
+      }
+      li{
+        width: 33.33%;
+        padding: 10px;
+      }
+      div{
+        min-height: 82px;
+      }
+      img{
+        width: 100%;
+      }
+      span{
+        font-size: 12px;
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}

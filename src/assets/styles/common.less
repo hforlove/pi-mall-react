@@ -9,6 +9,63 @@ div,ul,li,p,h1,h2,h3,h4,h5{
 .main-container{
 	padding: 46px 0 52px;
 }
+.full-container{
+	padding-top: 46px;
+}
+.hidden{
+	display: none !important;
+}
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.ellipsis-mul{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.no-more{
+	padding: 20px 0;
+	text-align: center;
+	&::after{
+		content: '没有更多了~~~';
+		color: gray;
+	}
+}
+
+.btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 110px;
+	height: 40px;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	font-size: 14px;
+	&.btn-yellow{
+		background: -webkit-linear-gradient(left,#ffd01e,#ff8917);
+    background: linear-gradient(to right,#ffd01e,#ff8917);
+	}
+	&.btn-red{
+		background: -webkit-linear-gradient(left,#ff6034,#ee0a24);
+		background: linear-gradient(to right,#ff6034,#ee0a24);
+	}
+}
+.btn-group{
+	display: flex;
+	button{
+		flex: 1;
+	}
+	button:first-child{
+		border-radius: 20px 0 0 20px;
+	}
+	button:last-child{
+		border-radius: 0 20px 20px 0;
+	}
+}
 
 .am-button{
 	font-size: 14px !important;

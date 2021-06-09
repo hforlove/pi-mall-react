@@ -40,7 +40,7 @@ function TabBar({location, history}) {
     <ul className="tab-bar">
       {
         tabs.map(item=>(
-          <li className={`${current == item.path ? 'act' : ''}`} key={item.path} onClick={_=>{redirect(item.path)}}>
+          <li className={`${current === item.path ? 'act' : ''}`} key={item.path} onClick={_=>{redirect(item.path)}}>
             <i className={`iconfont ${item.icon}`}></i>
             {item.brage ? <span>{item.brage}</span>: ''}
             {item.label}
