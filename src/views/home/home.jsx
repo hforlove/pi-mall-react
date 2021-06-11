@@ -40,7 +40,7 @@ export default function Home({history}) {
 
   return (
     <div className="main-container">
-      <NavBar back={false} onRightClick={_=>history.push('/goodsList')}>PI 商城</NavBar>
+      <NavBar back={false} right="iconsousuo" onRightClick={_=>history.push('/goodsList')}>PI 商城</NavBar>
 
       <Carousel autoplay={true} infinite >
         {

@@ -2,9 +2,11 @@ import React, { useRef, useState } from 'react'
 import { Tabs, InputItem, Button, Toast } from 'antd-mobile'
 
 import { login, register, sendSmsCode } from 'api'
-import { setToken } from 'utils'
+import { setToken, setStore } from 'utils'
 
 import './login.less'
+
+const tabs = [ {title: '登录'}, {title: '注册'} ]
 
 export default function Login({history}) {
   const loginMobileRef = useRef(null)
@@ -14,7 +16,6 @@ export default function Login({history}) {
   const regCodeRef = useRef(null)
   const regNicknameRef = useRef(null)
 
-  const tabs = [ {title: '登录'}, {title: '注册'} ]
 
   const [regCode,setRegCode] = useState('')
   const [active,setActive]  = useState(0)
@@ -61,6 +62,7 @@ export default function Login({history}) {
     if(mobile && password){
       login({mobile, password, group: "tinyShopH5"}).then(res=>{
         setToken(res.data.access_token)
+        setStore('cart',res.data.member.cart_num)
         Toast.success('登陆成功！')
         history.push('/home')
       })
@@ -80,7 +82,7 @@ export default function Login({history}) {
           <div className="login-tab">
             <InputItem placeholder="手机号" ref={loginMobileRef} defaultValue="13128542661" >手机号</InputItem>
             <InputItem placeholder="密码" ref={loginPasswordRef} defaultValue="123123" >密码</InputItem>
-            <div className="btn"><Button type="primary" onClick={onLogin}>登录</Button></div>
+            <div className="action"><Button type="primary" onClick={onLogin}>登录</Button></div>
           </div>
           <div className="login-tab">
             <InputItem placeholder="手机号" ref={regMobileRef} >手机号</InputItem>
@@ -94,7 +96,7 @@ export default function Login({history}) {
             </div>
             <InputItem placeholder="密码" ref={regPasswordRef} >密码</InputItem>
             <InputItem placeholder="昵称" ref={regNicknameRef} >昵称</InputItem>
-            <div className="btn"><Button type="primary" onClick={onRegister}>注册</Button></div>
+            <div className="action"><Button type="primary" onClick={onRegister}>注册</Button></div>
           </div>
         </Tabs>
       </div>

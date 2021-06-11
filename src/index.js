@@ -14,9 +14,9 @@ Toast.config({ duration: 1.5 })
 
 ReactDOM.render(
   <HashRouter>
-    <React.StrictMode>
+    {/* <React.StrictMode> */}
       <App />
-    </React.StrictMode>
+    {/* </React.StrictMode> */}
   </HashRouter>,
   document.getElementById('root')
 );

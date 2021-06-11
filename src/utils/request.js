@@ -20,6 +20,7 @@ request.interceptors.response.use(res => {
   if(res.data.code === 401){
     Toast.fail(res.data.message)
     // router.push('/login')
+    window.location.hash = "/login"
   }
   if(res.data.code === 200){
     return res.data

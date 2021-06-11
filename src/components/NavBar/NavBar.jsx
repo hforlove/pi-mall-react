@@ -11,7 +11,11 @@ function NavBar(props) {
   }
 
   const onRightClick = () => {
-    props.onRightClick && props.onRightClick()
+    if(props.onRightClick){
+      props.onRightClick()
+    }else{
+      props.history.push('/home')
+    }
   }
 
   return (
@@ -49,7 +53,7 @@ NavBar.propTypes = {
 }
 NavBar.defaultProps = {
   back: true,
-  right: 'iconsousuo',
+  right: 'iconshouye',
   rightText: ''
 }
 export default withRouter(NavBar)

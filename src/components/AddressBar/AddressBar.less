@@ -1,0 +1,42 @@
+.address-bar{
+  position: relative;
+  height: 80px;
+  padding: 0 20px;
+  &:before{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+		background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+		background-size: 80px;
+		content: '';
+  }
+  .icon{
+    position: absolute;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 10px;
+    top: 0;
+    .iconfont{
+      font-size: 12px;
+    }
+  }
+  .info{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-right: 30px;
+    align-items: center;
+    .cont{
+      padding-left: 20px;
+    }
+    p{
+      padding: 4px 0;
+    }
+  }
+}

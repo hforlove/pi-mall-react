@@ -36,7 +36,7 @@ export default function Category({history}) {
 
   return (
     <div className="main-container">
-      <NavBar onRightClick={_=>history.push('/goodsList')}>分类</NavBar>
+      <NavBar right="iconsousuo" onRightClick={_=>history.push('/goodsList')}>分类</NavBar>
 
       <div className="category">
         <div className="cate-left">
